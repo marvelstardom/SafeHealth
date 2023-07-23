@@ -2,7 +2,7 @@ import React from "react";
 import Layout from "../../components/layout/page";
 import Image from "next/image"; 
 import Link from "next/link";
-import { patients } from "@/app/data/patientsData/page";
+import { people } from "@/app/data/patientsData/page";
 
 export default function Patient() {
     return Layout (
@@ -10,7 +10,7 @@ export default function Patient() {
             {/* PATIENT'S FULL DATA INFO */}
             <div className="block bg-white py-8 p-10 rounded-2xl shadow-md text-md w-1/2">
                 <div className="mb-10">
-                    {patients.filter((patient) => patient.id < 2).map((patient) => (
+                    {people.filter((patient) => patient.id < 2).map((patient) => (
                     <ul key={patient.id}>
                     <li><Image src={patient.image}
                     width={100} 

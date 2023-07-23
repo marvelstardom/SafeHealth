@@ -1,4 +1,4 @@
-    export const patients = [
+    export const people = [
     {
         id: 1,
         patientNumber: '#C7D54',
