@@ -1,5 +1,4 @@
-'use client'
-import React, {useEffect} from "react";
+import React from "react";
 import Layout from "../components/layout/page";
 import Link from "next/link";
 import Icons from "@/app/hooks/icons/page";
@@ -38,14 +37,14 @@ export default function Doctors(){
                     </tr>
                 </thead>
                 <tbody className="divide-y">
-                    {doctors.map((person) => (
-                    <tr key={person.id} className="grid grid-cols-10 text-left px-8 pt-6 items-center justify-center">
-                        <td>{person.id}</td>
-                        <td>{person.doctorNumber}</td>
-                        <td className="col-span-2">{person.name}</td>
-                        <td>{person.age}</td>
-                        <td>{person.gender}</td>
-                        <td className="col-span-3">{person.email}</td>
+                    {doctors.map((doctor) => (
+                    <tr key={doctor.id} className="grid grid-cols-10 text-left px-8 pt-6 items-center justify-center">
+                        <td>{doctor.id}</td>
+                        <td>{doctor.doctorNumber}</td>
+                        <td className="col-span-2">{doctor.name}</td>
+                        <td>{doctor.age}</td>
+                        <td>{doctor.gender}</td>
+                        <td className="col-span-3">{doctor.email}</td>
                         <td><Icons /></td><br/>
                     </tr>
                     ))}
