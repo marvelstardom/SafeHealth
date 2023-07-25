@@ -2,7 +2,7 @@ import React from "react";
 import Layout from "../../components/layout/page";
 import Image from "next/image"; 
 import Link from "next/link";
-import { people } from "@/app/data/patientsData/page";
+import { people } from "@/app/dashboard/patients/patientsData/page";
 
 export default function Patient() {
     return Layout (
@@ -12,13 +12,13 @@ export default function Patient() {
                 <div className="mb-10">
                     {people.filter((patient) => patient.id < 2).map((patient) => (
                     <ul key={patient.id}>
-                    <li><Image src={patient.image}
+                    {/* <li><Image src={patient.image}
                     width={100} 
                     height={100} 
                     alt="image" 
                     // sizes="(max-width: 768px) 100vw"
                     // style={{objectFit: "contain"}}
-                    className="rounded-full" /></li>
+                    className="rounded-full" /></li> */}
                 <li>Name: {patient.name}</li>
                 <li>ID No: {patient.id}</li>
                 <li>Gender: {patient.gender}</li>

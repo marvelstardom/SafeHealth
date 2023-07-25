@@ -1,7 +1,7 @@
 'use client'
 import React, { useState } from "react";
 import Link from "next/link";
-import { links } from "@/app/data/page";
+import { links } from "@/app/links/page";
 
 
 export default function SideBar () {
@@ -31,13 +31,6 @@ export default function SideBar () {
                         </Link>
                     ))}
                 </div>
-                
-
-                {/* <ul className="flex flex-col flex-1 gap-2 px-4 mt-20 text-teal-900 font-bold text-xl">
-                    <li className="my-3"><Link href='/dashboard/'>Overview</Link></li>
-                    <li className="my-3"><Link href='/dashboard/patientsRecord/'>Patients</Link></li>
-                    <li className="my-3"><Link href='/dashboard/doctorsRecord/'>Doctors</Link></li>
-                </ul> */}
                 </>)}
             </div>
         </nav>

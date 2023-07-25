@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import Layout from "../components/layout/page";
 import Link from "next/link";
 import Icons from "@/app/hooks/icons/page";
-import { people } from "@/app/data/patientsData/page";
+import { people } from "@/app/dashboard/patients/patientsData/page";
 
 export default function Patients() {
     const addPatient = async () => {

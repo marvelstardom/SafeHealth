@@ -9,6 +9,6 @@ export const links = [
         name: 'patients',
     },
     {
-        name: 'doctors'
-    }
+        name: 'doctors',
+    },
 ]
