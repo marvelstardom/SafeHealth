@@ -16,14 +16,14 @@ export default function Header() {
   <>
   <SessionProvider>
       {/* <Main/> */}
-      <Navbar/>
+      <Navbar handleSignOut={handleSignOut} />
       {/* { session && Navbar() } */}
   </SessionProvider>
   </>
   )
 }
 
-function Navbar ({handleSignOut}) {
+export function Navbar ({handleSignOut}) {
     return (
     <header className='flex items-center justify-between'>
         <Logo />
@@ -42,9 +42,7 @@ function Navbar ({handleSignOut}) {
                 </li>
                 {/* SIGN OUT */}
                 <li>
-                {/* <Link href='#'> */}
                     <button onClick={handleSignOut} className='hover:bg-teal-800 border-2 border-teal-900 rounded-full text-teal-900 hover:text-white px-6 py-2'>Sign Out</button>
-                {/* </Link> */}
                 </li>
                 {/* <li>
                 <Link href='#'><button className='hover:animate-pulse border-teal-900 border-2 rounded-full text-teal-900 px-6 py-2'>Register</button></Link>
