@@ -9,7 +9,7 @@ export default function Home() {
 
   return (
     <main className="flex flex-col m-0 p-0 lg:h-max lg:w-full">
-      <div className='lg:py-12 lg:px-24 p-10'>
+      <div className='lg:py-10 lg:px-10 p-10'>
         {/* BACKGROUND IMAGE */}
         <Image
           alt="background"
@@ -25,7 +25,7 @@ export default function Home() {
         {/* HEADER */}
         <Header />
 
-        <section className="lg:pt-44 pt-32">
+        <section className="lg:pt-44 pt-32 px-14">
           <div className='flex flex-1 lg:flex-row flex-col items-center justify-center lg:gap-8 gap-y-8'>
             <div className='flex flex-col justify-between group hover:bg-teal-900 shadow-lg flex-1 border rounded-3xl w-80 h-96 lg:w-32 lg:h-64 p-10 bg-teal-50'>
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="fill-teal-900 w-12 h-12 group-hover:fill-white">

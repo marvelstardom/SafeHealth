@@ -1,28 +1,14 @@
 import React from "react";
 import Layout from "../../components/layouts";
 import Link from "next/link";
-import {patientData} from '../patientData'
 
 export default function Patient() {
     return Layout (
-        <div className="w-full py-12 px-12 h-full flex flex-row gap-6">
+        <div className="w-full py-10 px-8 h-full flex flex-row gap-6">
             {/* PATIENT'S FULL DATA INFO */}
-            <div className="block bg-white py-8 p-10 rounded-2xl shadow-md text-md w-1/2">
+            <div className="block bg-white py-6 p-8 rounded-2xl shadow-md text-md w-1/2">
                 <div className="mb-10">
-                    {patientData.filter(() => patientData < 2).map((patient) => (
-                    <ul key={patient.id < 2}>
-                        <li>Card Number: {`${patient.cardNumber}`}</li>
-                        <li>First Name: {patient.firstName}</li>
-                        <li>Last Name: {patient.lastName}</li>
-                        <li>Diagnosis: {patient.diagnosis}</li>
-                        <li>Email: {patient.email} </li>
-                        <li>Gender: {patient.gender}</li>
-                        <li>Age: {patient.age} </li>
-                        <li>Phone: {patient.phoneNumber}</li>
-                        <li>Address: </li>
-                        <li>Date of Dirth: </li>
-                    </ul>
-                ))}
+                   
                 </div>
                 {/* ICONS */}
                 <div className="flex flex-row gap-4 mb-10">
@@ -52,7 +38,7 @@ export default function Patient() {
 
             {/* PATIENT HISTORY */}
            <div className="flex flex-col gap-6 justify-between">
-             <div className="block bg-white py-8 p-10 rounded-2xl text-md h-80 w-auto shadow-md">
+             <div className="block bg-white py-8 p-8 rounded-2xl text-md h-80 w-auto shadow-md">
                 <h1 className="text-2xl font-bold text-gray-600 mb-4">Medical History</h1>
                 <div className="flex flex-col justify-between gap-2">
                     <h1>Symptoms</h1>

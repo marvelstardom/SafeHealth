@@ -6,15 +6,14 @@ import heroBg from "../../public/images/bg2.jpg"
 
 export default function Register () {
     return (
-    <section className="flex flex-col m-0 p-0 lg:h-max lg:w-full">
-      <div className='lg:py-12 lg:px-10 p-10'>
+    <section className="flex flex-col m-0 p-0 lg:h-max lg:w-full bg-gray-200">
+      <div className='lg:py-10 lg:px-10 p-10'>
        
        <div className="flex flex-row justify-between items-center">
         <Logo />
         <Link href="/" 
           className='hover:bg-teal-800 border-2 border-teal-900 rounded-full text-teal-900 hover:text-white px-6 py-2'>
           Back 
-          {/* <span aria-hidden="true">→</span> */}
         </Link>
        </div>
         <div className="flex justify-center items-center text-left w-full py-12">

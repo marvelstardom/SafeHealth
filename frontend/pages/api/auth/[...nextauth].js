@@ -6,6 +6,8 @@ import FacebookProvider from 'next-auth/providers/facebook'
 import GoogleProvider from 'next-auth/providers/google'
 import CredentialsProvider from 'next-auth/providers/credentials'
 // import EmailProvider from 'next-auth/providers/email'
+import { MongoDBAdapter } from "@auth/mongodb-adapter"
+import clientPromise from "./clientPromise"
 import connectMongo from "../../../../backend/connection"
 import User from "../../../../backend/models/User"
 import { compare } from "bcryptjs"
@@ -56,6 +58,7 @@ export default NextAuth({
         }
         return result
       }
-    })
-  ]
+    }),
+  ],
+  adapter: MongoDBAdapter(clientPromise),
 })

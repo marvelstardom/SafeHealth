@@ -28,9 +28,15 @@ const Login = () => {
   }
 
   return (
-  <section className="flex flex-col m-0 p-0 h-screen w-full lg:h-max lg:w-full">
+  <section className="flex flex-col m-0 p-0 h-screen w-full lg:h-max lg:w-full bg-gray-200">
     <div className='p-10'>
-    <Logo/>
+    <div className="flex flex-row justify-between items-center">
+      <Logo />
+      <div className="flex justify-end items-center gap-4">
+        <Link href="../register"><span className="font-bold text-teal-900">HealthProvider?</span> <span className='hover:bg-teal-800 border-2 border-teal-900 rounded-full text-teal-900 hover:text-white px-6 py-2'>Register Here</span></Link>
+        <Link href="/" className='hover:bg-teal-800 border-2 border-teal-900 rounded-full text-teal-900 hover:text-white px-6 py-2'>Back </Link>
+      </div>
+    </div>
     <div className='px-40 pt-8 mb-1'>
       <div className="flex justify-center items-center text-left w-full py-8 px-8">
         <div id="form" className="block bg-white p-8 border rounded-xl max-w-[450px] shadow-lg">
@@ -46,9 +52,7 @@ const Login = () => {
               <button type="submit" onClick={handleGithubSignIn} className="flex flex-row justify-center items-center text-lg px-2 py-2 text-center block w-full border border-gray-300 cursor-pointer rounded-md hover:bg-gray-300 mt-2">Sign in with GitHub <Image src={GitHub} alt="google" width={25} height={25} className="ml-2" /></button>
             </div>
 
-            <div className="flex flex-row justify-center items-center text-lg px-2 py-2 text-center block w-full mt-2 cursor-pointer">
-              <Link href="../register">HealthProvider? <span className="text-red-500">Register Here</span></Link>
-            </div>
+            {/* <div className="flex flex-row justify-center items-center text-lg px-2 py-2 text-center block w-full mt-2 cursor-pointer"></div> */}
 
               <p className="text-sm text-center mt-4">By signing in you are agreeing to our <Link href="#" className="text-blue-600">Terms of Use</Link> and<Link href="#" className="text-blue-600"> Privacy Policy</Link></p>
 

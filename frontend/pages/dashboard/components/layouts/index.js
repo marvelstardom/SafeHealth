@@ -1,16 +1,22 @@
 import React from 'react';
 import SideBar from './Sidebar';
+import DbNavbar from './DbNavbar';
 
 export default function Layout(content) {
     return (
         <div className='w-full max-w-fit relative bg-gray-200'>
-           <div className='flex flex-row justify-start gap-12'>
-             <div className='fixed'>
-                <SideBar />
+           <div className='flex flex-col justify-start'>
+             <div className='flex flex-col'>
+                <div className='fixed z-50'>
+                    <SideBar />
+                </div>
+                <div className='fixed'>
+                    <DbNavbar />
+                </div>
              </div>
-            <div className='bg-gray-200 ml-[15%] inherit top-0 bottom-0 h-full'>
-                {content}
-            </div>
+                <div className='bg-gray-200 h-full ml-[15%] mt-12 inherit w-full'>
+                    {content}
+                </div>
            </div>
         </div>
     )

@@ -16,7 +16,18 @@ export default function Header() {
   <>
   <SessionProvider>
       {/* <Main/> */}
-      <Navbar handleSignOut={handleSignOut} />
+      {!session ? <div className='flex items-center justify-between'>
+                    <Logo />
+                    <div className='flex flex-row items-center justify-end gap-2'>
+                      <Link href='../login'>
+                        <button className='hover:bg-teal-800 bg-teal-900 rounded-full text-white px-6 py-2'>Sign Up</button>
+                      </Link>
+                      <Link href='../register'>
+                        <button className='hover:bg-teal-800 bg-teal-900 rounded-full text-white px-6 py-2'>Register</button>
+                      </Link>
+                    </div>
+                  </div> 
+                : <Navbar handleSignOut={handleSignOut} />}
       {/* { session && Navbar() } */}
   </SessionProvider>
   </>
@@ -32,7 +43,8 @@ export function Navbar ({handleSignOut}) {
                 {/* REGISTER */}
                 <li>
                 <Link href='../register'>
-                <button className='hover:bg-teal-800 bg-teal-900 rounded-full text-white px-6 py-2'>Register</button></Link>
+                  <button className='hover:bg-teal-800 bg-teal-900 rounded-full text-white px-6 py-2'>Register</button>
+                </Link>
                 </li>
                 {/* LOGIN */}
                 <li>
