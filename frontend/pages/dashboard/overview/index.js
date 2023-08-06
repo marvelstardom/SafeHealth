@@ -13,7 +13,7 @@ import AppCalendar from "../components/Calendar";
 
 export default function Overview() {
     return Layout (
-    <div className='mt-10 mr-8 h-screen w-full max-w-7xl m-0 pl-10'>
+    <div className='mt-14 ml-10 h-screen w-full max-w-7xl m-0 pl-10'>
         <div className='flex flex-row gap-2 mb-6'>
             {/* TOTAL PATIENTS */}
             <div className="flex flex-col border-4 border-teal-900 rounded-3xl py-4 px-6 shadow-md w-1/4">

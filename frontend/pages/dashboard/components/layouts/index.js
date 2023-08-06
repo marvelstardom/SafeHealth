@@ -14,7 +14,7 @@ export default function Layout(content) {
                     <DbNavbar />
                 </div>
              </div>
-                <div className='bg-gray-200 h-full ml-[15%] mt-12 inherit w-full'>
+                <div className='bg-gray-200 h-full ml-[12%] mt-12 inherit w-full'>
                     {content}
                 </div>
            </div>

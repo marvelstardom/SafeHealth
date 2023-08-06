@@ -63,7 +63,7 @@ export default function Patients(){
                     <button onClick={() => setIsOpen(!isOpen)} className="py-2 px-4 rounded-lg bg-teal-900 hover:bg-teal-800 text-white">
                         Add New Patient
                     </button>
-                    {isOpen && <ReactModal isOpen={isOpen} onRequestClose={() => setIsOpen(!isOpen)} ariaHideApp={false} className='mx-auto mt-30 w-1/2 z-10 text-center'>
+                    {isOpen && <ReactModal isOpen={isOpen} onRequestClose={() => setIsOpen(!isOpen)} ariaHideApp={false} className='mx-auto mt-32 w-1/2 z-10 text-center'>
                         <div className="bg-gray-100 p-12 border rounded-2xl shadow-md">
                         <h1 className="text-lg font-bold mb-4">Add New Patient</h1>
                         

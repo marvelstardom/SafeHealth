@@ -1,13 +1,20 @@
 import Icons from "@/hooks/actions/index"
+import Avatar from '@mui/material/Avatar';
 
 const icons = <Icons />
 
 export const docColumns = [
+    // {
+    //     name: 'ID',
+    //     selector: row => row.id,
+    //     sortable: true,
+    //     width: "6%"
+
+    // },
     {
-        name: 'ID',
-        selector: row => row.id,
-        sortable: true,
-        width: "6%"
+        name: 'Profile',
+        selector: row => <Avatar src={row.image} />,
+        // sortable: true,
 
     },
     {
@@ -46,13 +53,13 @@ export const docColumns = [
         sortable: true,
 
     },
-    {
-        name: 'Age',
-        selector: row => row.age,
-        sortable: true,
+    // {
+    //     name: 'Age',
+    //     selector: row => row.age,
+    //     sortable: true,
         
 
-    },
+    // },
     {
         name: 'Phone',
         selector: row => row.phoneNumber,

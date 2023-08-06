@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import ReactModal from "react-modal"
-import { patientData } from './patientData'
+import { patientData } from '../../patients/patientData'
 
-export default function AddPatient() {
+export default function AddDoctor() {
     const [isOpen, setIsOpen] = useState(false)
     const [formState, setFormState] = useState(patientData)
 
@@ -13,10 +13,7 @@ export default function AddPatient() {
         console.log(formState)
     }
   return (
-    <div>
-        <button onClick={() => setIsOpen(!isOpen)} className="py-2 px-4 rounded-lg bg-teal-900 hover:bg-teal-800 text-white">
-            Add New Patient
-        </button>
+    // <div>
         <ReactModal isOpen={isOpen} onRequestClose={() => setIsOpen(!isOpen)} className='mx-auto mt-32 w-1/2 z-10 text-center'>
             <div className="bg-gray-100 p-12 border rounded-2xl shadow-md">
             <h1 className="text-lg font-bold mb-4">Add New Patient</h1>
@@ -47,6 +44,6 @@ export default function AddPatient() {
             </form>
             </div>
         </ReactModal>
-    </div>
+    // </div>
   )
 }

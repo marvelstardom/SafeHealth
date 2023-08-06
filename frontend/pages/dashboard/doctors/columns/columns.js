@@ -1,18 +1,13 @@
 export const COLUMNS = [
-    {
-        Header: 'No',
-        accessor: 'id',
-        sortable: true
-    },
-    {
-        Header: 'Med No',
-        accessor: 'medNumber',
-        sortable: true
-    },
+    // {
+    //     Header: 'No',
+    //     accessor: 'id',
+    //     sortable: true
+    // },
     {
         Header: 'First Name',
         accessor: 'firstName',
-        sortable: true
+        sortable: true,
     },
     {
         Header: 'Last Name',
@@ -23,6 +18,11 @@ export const COLUMNS = [
         accessor: 'department',
         sortable: true
     },
+    // {
+    //     Header: 'Med No',
+    //     accessor: 'medNumber',
+    //     sortable: true
+    // },
     {
         Header: 'Email',
         accessor: 'email',

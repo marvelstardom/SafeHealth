@@ -38,7 +38,7 @@ export default function AccountMenu() {
               <div className='font-bold text-white text-4xl'><Typography sx={{ minWidth: 100 }}>Dashboard</Typography></div>
           </div> */}
           <div className='flex flex-row items-center justify-content-end'>
-            <Typography sx={{ minWidth: 100, color: 'white' }}>Ola Johnson</Typography>
+            {/* <Typography sx={{ minWidth: 100, color: 'white' }}>Ola Johnson</Typography> */}
             <Tooltip title="Account settings">
               <IconButton
                 onClick={handleClick}
