@@ -1,10 +1,15 @@
-// "use client"
+"use client"
 import React from 'react'
+// import Modal from '@mui/base/Modal';
+import { useState } from 'react'
+import { useRouter } from 'next/router'
 
-export default function Icons(dataArr) {
+export default function Icons() {
+    const router = useRouter()
+    const [patientRecords, setPatientRecords] = useState(patientData)
 
-    const handleDelete = (firstName) => {
-        setPatientRecords(dataArr.filter(row => row.firstName !== firstName))
+    const handleDelete = (id) => {
+        setPatientRecords(patientRecords.filter(row => row.id !== id))
     }
 
 return (

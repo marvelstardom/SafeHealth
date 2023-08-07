@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import ReactModal from "react-modal"
-import { patientData } from '../../patients/patientData'
+import { docData } from '../columns/docData'
 
 export default function AddDoctor() {
-    const [isOpen, setIsOpen] = useState(false)
-    const [formState, setFormState] = useState(patientData)
+    const [isOpenModal, setisOpenModal] = useState(false)
+    const [formState, setFormState] = useState(docData)
 
     const handleSubmit = (e) => {
         // const newFormState = {firstName, lastName, cardNumber, diagnosis, email, age, phoneNumber, gender}
@@ -14,7 +14,7 @@ export default function AddDoctor() {
     }
   return (
     // <div>
-        <ReactModal isOpen={isOpen} onRequestClose={() => setIsOpen(!isOpen)} className='mx-auto mt-32 w-1/2 z-10 text-center'>
+        <ReactModal isOpenModal={isOpenModal} onRequestClose={() => setisOpenModal(!isOpenModal)} className='mx-auto mt-32 w-1/2 z-10 text-center'>
             <div className="bg-gray-100 p-12 border rounded-2xl shadow-md">
             <h1 className="text-lg font-bold mb-4">Add New Patient</h1>
             
@@ -36,7 +36,7 @@ export default function AddDoctor() {
                 {/* <input type="date" value={dob} onChange={(e) => dobChange(e.target.value)} placeholder='Date of Birth' className="h-10 rounded-md border text-gray-500 border-slate-300 text-sm px-4 mb-3 mt-1.5" /> 
                 <input type="text" value={status} onChange={(e) => statusChange(e.target.value)} placeholder='Status' className="h-10 rounded-md border border-slate-300 text-sm px-4 mb-3 mt-1.5" />  */}
                 <div className="bg-rose-900 rounded-md hover:bg-rose-800 mt-6 cursor-pointer text-center text-white">
-                    <button type="submit" onClick={() => setIsOpen(!isOpen)} className="px-6 py-2">Back</button>
+                    <button type="submit" onClick={() => setisOpenModal(!isOpenModal)} className="px-6 py-2">Back</button>
                 </div>
                 <div className="bg-teal-900 rounded-md hover:bg-teal-800 mt-6 cursor-pointer text-center text-white">
                     <button type="submit" className="px-6 py-2">Add Patient</button>

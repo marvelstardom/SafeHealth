@@ -3,7 +3,7 @@
 // import { COLUMNS } from "../columns/page"
 // import "./table.module.css"
 
-// "use client"
+"use client"
 import React from 'react'
 import { useState } from 'react'
 import {docData} from '../columns/docData'
@@ -40,12 +40,11 @@ export const DoctorsTable = (props) => {
         setDoctorRecords(newData)
     }
     
-
   return (
     <div className='w-full max-w-[1225px]'>
     <div className="flex flex-row justify-between">
         <div className="flex flex-row items-center justify-center">
-            <svg className="bg-teal-900 text-white rounded-lg p-1 w-8 h-8 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" /></svg>
+            <svg className="bg-teal-900 text-white rounded-lg p-1 w-8 h-8 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" /></svg>
             <h1 className='font-bold text-lg'>All Doctors</h1>
         </div>
         {/* FILTER BUTTON */}
@@ -94,7 +93,7 @@ export const ModuleTable = () => {
     const { getTableProps, getTableBodyProps, rows, headerGroups, prepareRow} = tableInstance 
     return(
         <div>
-            <table {...getTableProps()} id='table' className='table-auto m-2 pt-4 flex flex-col'>
+            <table key={data.id} {...getTableProps()} id='table' className='table-auto m-2 pt-4 mb-12 flex flex-col'>
                 {/* <thead className=''>
                     {headerGroups.map((headerGroup) => 
                     <tr {...headerGroup.getHeaderGroupProps()} className=''>
@@ -110,28 +109,29 @@ export const ModuleTable = () => {
                         prepareRow(row)
                         return (
                             <tr {...row.getRowProps()} className='w-1/4 h-auto px-6 pr-4 py-8 border-2 border-gray bg-white rounded-xl flex flex-wrap flex-col shadow-lg gap-y-0'>
-                                <tr>
-                                    <td className='flex flex-col items-center'><Avatar src={row.image} /></td>
-                                </tr>
+                                <td>
+                                    <div className='flex flex-col items-center'><Avatar src={row.image} /></div>
+                                </td>
                             {row.cells.map((cell) => {
-                                return (
-                                    <div>
-                                    <td {...cell.getCellProps()} className='flex flex-col items-center'>{cell.render('Cell')}</td>
-                                </div>
-                                )
+                                return  <td {...cell.getCellProps()} className='flex flex-col items-center'>{cell.render('Cell')}</td>
+                                // (
+                                    // <div>
+                                    {/* </div> */}
+                                // )
                             })}
-                            <br />
-                            <tr>
-                                <td className='flex flex-col items-center'>
-                                   <div>
-                                        <Link href=""  className='group flex flex-row items-center justify-center border-2 border-orange-600 px-3 py-2 rounded-full text-orange-600 hover:bg-orange-600 hover:text-white '>
+                            {/* <br /> */}
+                            <td>
+                                <div className='flex flex-col items-center'>
+                                   {/* <div> */}
+                                        <Link href=""  className='group flex flex-row items-center justify-center mt-2 border-2 border-orange-500 px-3 py-2 rounded-full text-orange-600 hover:bg-orange-500 hover:text-white '>
                                             View More
                                             <Image src={viewMore} alt="View more" height={20} width={20} className='rotate-180 ml-2' />
                                         </Link>
-                                   </div>
-                                </td>
-                            </tr>
-                        </tr>)
+                                   {/* </div> */}
+                                </div>
+                            </td>
+                        </tr>
+                        )
                     })}
                 </tbody>
             </table>

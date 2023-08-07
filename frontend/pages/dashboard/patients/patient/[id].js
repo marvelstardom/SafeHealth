@@ -1,15 +1,36 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import Layout from "../../components/layouts";
 import Link from "next/link";
+import axios from "axios";
+import { patientData } from "../patientData";
 
 export default function Patient() {
+    // const [dataArr, setDataArr] = useState([])
+    const { id } = useParams()
+    const [patientRecords, setPatientRecords] = useState(patientData)
+    useEffect(() => {
+      axios.get(patientRecords)
+        .then(res => setPatientRecords(res.data))
+        .catch(err => console.log(err))
+    }, [])
+
+    // const { newPatient, setNewPatient} = useState({})
     return Layout (
-        <div className="w-full py-10 px-8 h-full flex flex-row gap-6">
+        <div className="w-fit max-w-7xl ml-12 py-16 pl-8 h-full flex flex-row gap-6">
             {/* PATIENT'S FULL DATA INFO */}
             <div className="block bg-white py-6 p-8 rounded-2xl shadow-md text-md w-1/2">
-                <div className="mb-10">
-                   
-                </div>
+               { patientRecords &&  
+               <ul key={patientRecords.id} className="mb-10">
+                   <li className="font-bold text-xl text-gray-600">First Name: {patientRecords.firstName}</li>
+                   <li className="font-bold text-xl text-gray-600">Last Name: {patientRecords.lastName}</li>
+                   <li className="font-bold text-xl text-gray-600">Card No: {patientRecords.cardNumber}</li>
+                   <li className="font-normal text-md text-gray-600">Email: {patientRecords.email}</li>
+                   <li className="font-normal text-md text-gray-600">Diagnosis: {patientRecords.diagnosis}</li>
+                   <li className="font-normal text-md text-gray-600">Gender: {patientRecords.gender}</li>
+                   <li className="font-normal text-md text-gray-600">Age: {patientRecords.age}</li>
+                   <li className="font-normal text-md text-gray-600">Phone: {patientRecords.phoneNumber}</li>
+                </ul>}
                 {/* ICONS */}
                 <div className="flex flex-row gap-4 mb-10">
                     {/* EDIT */}
@@ -37,14 +58,24 @@ export default function Patient() {
             </div>
 
             {/* PATIENT HISTORY */}
-           <div className="flex flex-col gap-6 justify-between">
+           <div className="flex flex-col gap-6 w-1/2 justify-between">
              <div className="block bg-white py-8 p-8 rounded-2xl text-md h-80 w-auto shadow-md">
                 <h1 className="text-2xl font-bold text-gray-600 mb-4">Medical History</h1>
                 <div className="flex flex-col justify-between gap-2">
                     <h1>Symptoms</h1>
                     <h1>Diagnosis</h1>
-                    <div className="flex items-end justify-end mt-20">
-                        <Link className="self-end" href=""><button className="w-40 rounded-lg bg-teal-900 text-white px-6 py-2">View all info</button></Link>
+                    {/* <div class="shrink-0">
+                        <img class="h-16 w-16 object-cover rounded-full" src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1361&q=80" alt="Current profile photo" />
+                    </div> */}
+                    <div className="flex items-end justify-between mt-24 pb-10">
+                        <Link className="self-end" href=""><button className="rounded-full bg-teal-900 text-white py-2 px-4">View all info</button></Link>
+                        <form class="flex items-end justify-end space-x-6">
+                            <label class="block">
+                                {/* <span class="sr-only">Choose profile photo</span> */}
+                                <h1 className="font-bold text-amber-800">Upload Patient's Record</h1>
+                                <input type="file" class="block w-full text-sm text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-amber-100 file:text-amber-700 hover:file:bg-amber-600 hover:file:text-white"/>
+                            </label>
+                        </form>
                     </div>
                 </div>
             </div>
