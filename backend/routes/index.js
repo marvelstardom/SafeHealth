@@ -1,15 +1,10 @@
 const express = require('express');
 const router = express.Router();
-const { ensureAuthenticated, forwardAuthenticated } = require('../config/auth');
+const { forwardAuthenticated } = require('../config/auth');
 
-// Welcome Page
-router.get(process.env.FRONTEND_URL +'/', forwardAuthenticated, (req, res) => res.render('welcome'));
-
-// Dashboard
-router.get(process.env.FRONTEND_URL +'/dashboard/overview/', ensureAuthenticated, (req, res) =>
-  res.render(process.env.FRONTEND_URL +'/dashboard/overview/', {
-    name: req.user.email
-  })
-);
+// Welcome API
+router.get('/', forwardAuthenticated, (req, res) => {
+  res.json({ message: 'Welcome to the API' });
+});
 
 module.exports = router;

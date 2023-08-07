@@ -6,29 +6,45 @@ const passport = require('passport');
 const User = require('../models/User.js');
 const { forwardAuthenticated } = require('../config/auth');
 
-// Login Page
-router.get('/login', forwardAuthenticated, (req, res) => res.render('login'));
+// Login API
+router.get("/login", forwardAuthenticated, (req, res) => {
+  res.json({ message: "Login API" });
+});
 
-// Register Page
-router.get('/register', forwardAuthenticated, (req, res) => res.render('register'));
 
-// data, medical records, text and prescription
-// router.get('/data')
-router.get('/data',(req, res)=>{
-  res.render('data')
-})
-router.get('/medical',(req, res)=>{
-  res.render('medical')
-})
 
-router.get('/test',( req, res)=>{
-  res.render('test')
-})
-router.get('/prescription', (req, res)=>{
-  res.render('prescription')
-})
+// Logout API (no changes needed here)
+router.post("/login", async (req, res) => {
+  const { email, password } = req.body;
 
-// Register
+  try {
+    // Check if the user exists in the database
+    const user = await User.findOne({ email });
+
+    if (!user) {
+      return res.status(404).json({ error: "User not found" });
+    }
+
+    // Check if the provided password matches the user's password in the database
+    const isMatch = await bcrypt.compare(password, user.password);
+
+    if (!isMatch) {
+      return res.status(401).json({ error: "Invalid credentials" });
+    }
+
+    // Create a session on the server
+    req.session.userId = user._id;
+
+    res.json({ message: "Login successful" });
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).json({ error: "Server error" });
+  }
+});
+
+
+
+// Register API
 router.post('/register', (req, res) => {
   const { name, email, password, password2 } = req.body;
   let errors = [];
@@ -37,7 +53,7 @@ router.post('/register', (req, res) => {
     errors.push({ msg: 'Please enter all fields' });
   }
 
-  if (password != password2) {
+  if (password !== password2) {
     errors.push({ msg: 'Passwords do not match' });
   }
 
@@ -46,24 +62,12 @@ router.post('/register', (req, res) => {
   }
 
   if (errors.length > 0) {
-    res.render('register', {
-      errors,
-      name,
-      email,
-      password,
-      password2
-    });
+    res.status(400).json({ errors });
   } else {
     User.findOne({ email: email }).then(user => {
       if (user) {
         errors.push({ msg: 'Email already exists' });
-        res.render('register', {
-          errors,
-          name,
-          email,
-          password,
-          password2
-        });
+        res.status(400).json({ errors });
       } else {
         const newUser = new User({
           name,
@@ -78,11 +82,7 @@ router.post('/register', (req, res) => {
             newUser
               .save()
               .then(user => {
-                req.flash(
-                  'success_msg',
-                  'You are now registered and can log in'
-                );
-                res.redirect('/users/login');
+                res.status(201).json({ message: 'Registration successful' });
               })
               .catch(err => console.log(err));
           });
@@ -92,36 +92,10 @@ router.post('/register', (req, res) => {
   }
 });
 
-// Login
-router.post('/login', (req, res, next) => {
-  // res.send({msg:"login successful"})
-  passport.authenticate('local', {
-    successRedirect: '/dashboard',
-    successMessage: "log in successful",
-    failureRedirect: '/users/login',
-    failureFlash: true
-  })(req, res, next);
-  
-  console.log( "log in  successful")
-});
-
-// data
-// router.post('/data', (req, res)=>{
-//   const { surname,othername, address,  } = req.body;
-//   let errors = [];
-
-//   if ( !surname || !othername || !address) {
-//     errors.push({ msg: 'Please enter all fields' });
-//   }
-// })
-
-// Logout
+// Logout API
 router.get('/logout', (req, res) => {
-  req.logout(function(err) {
-    if(err) {return next(err)}
-    res.redirect('/users/login');
-    req.flash('success_msg', 'You are logged out');
-  });
+  req.logout();
+  res.json({ message: 'Logout successful' });
 });
 
 module.exports = router;

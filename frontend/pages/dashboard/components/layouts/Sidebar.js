@@ -22,9 +22,9 @@ export default function SideBar () {
                     </div>
                 </Link>
 
-                <div className="flex flex-col flex-1 justify-start mt-20 gap-2 capitalize text-teal-100 text-md ">
+                <div className="flex flex-col flex-1 justify-start mt-20 gap-2 capitalize text-teal-100 text-md">
                     {links.map((link) => (
-                        <Link href={`/dashboard/${link.name}`} key={link.name} className="flex flex-row items-center gap-2 hover:bg-white hover:text-teal-900 rounded-lg px-4 py-2">
+                        <Link href={`/dashboard/${link.name}`} key={link.name} className="flex flex-row items-center gap-4 hover:bg-teal-100 hover:text-teal-900 rounded-lg px-4 py-2">
                             {/* <Image src={link.imageDark} width={20} height={20} alt="icons"/> */}
                             {link.image}{link.imageLight}
                             {link.name}

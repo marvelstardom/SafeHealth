@@ -1,9 +1,10 @@
 const express = require('express');
-const expressLayouts = require('express-ejs-layouts');
 const mongoose = require('mongoose');
 const passport = require('passport');
 const flash = require('connect-flash');
 const session = require('express-session');
+const apiRoutes = require('./routes/index.js'); // Use require for CommonJS modules
+
 const app = express();
 
 // Passport Config
@@ -13,20 +14,14 @@ require('./config/passport')(passport);
 const db = require('./config/env').mongoURI;
 // Connect to MongoDB 
 mongoose
-  .connect(
-    db,
-    { useNewUrlParser: true ,useUnifiedTopology: true}
-    )
+  .connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('MongoDB Connected.....!'))
   .catch(err => console.log(err));
 
-// EJS
-app.use(expressLayouts);
-app.set('view engine', 'ejs');
-
 // Express body parser
 app.use(express.urlencoded({ extended: true }));
-app.use(express.json())
+app.use(express.json());
+
 // Express session
 app.use(
   session({
@@ -52,9 +47,9 @@ app.use(function(req, res, next) {
 });
 
 // Routes
-app.use('/', require('./routes/index.js'));
-app.use('/users', require('./routes/users.js'));
+app.use('/api', apiRoutes);
+app.use('/api/users', require('./routes/users.js'));
 
 const PORT = process.env.PORT || 8500;
 
-app.listen(PORT, console.log(`Server running on  ${PORT}`));
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
