@@ -1,7 +1,4 @@
-import { Inter } from 'next/font/google'
-
-const inter = Inter({ subsets: ['latin'] })
-
+import LayoutRoot from "./layoutRoot"
 export const metadata = {
   title: 'SafeHealth',
   description: 'Digitalizing your healthcare.',
@@ -9,8 +6,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
-    </html>
+    <LayoutRoot>
+      {children}
+    </LayoutRoot>
   )
 }
