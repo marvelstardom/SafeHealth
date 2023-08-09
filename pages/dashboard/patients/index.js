@@ -2,9 +2,9 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import ReactModal from "react-modal"
-import Layout from "../components/layouts";
+import Layout from "../../../components/layouts";
 import DataTable from 'react-data-table-component'
-import {patientColumns} from './patientColumns'
+import {patientColumns} from '../../../components/patientColumns'
 // import {patientData} from './patientData'
 import axios from "axios"
 import { useRouter } from "next/router";
@@ -41,7 +41,7 @@ export default function Patients(){
       axios.get(patientRecords)
         .then(res => setPatientRecords(res.data))
         .catch(err => console.log(err))
-    }, [])
+    }, [patientRecords])
 
     const handleChange = (e) => {
         setUserInput({...userInput, [e.target.name]: e.target.value})

@@ -1,8 +1,6 @@
 import Icons from "@/hooks/actions/index"
 import Avatar from '@mui/material/Avatar';
 
-const icons = <Icons />
-
 export const docColumns = [
     // {
     //     name: 'ID',
@@ -68,7 +66,7 @@ export const docColumns = [
     },
     {
         name: 'Action',
-        selector: row => icons,
+        selector: row => <Icons />,
 
     }
 ]

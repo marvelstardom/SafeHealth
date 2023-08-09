@@ -1,5 +1,5 @@
 import React from "react";
-import Layout from "./components/layouts";
+import Layout from "../../components/layouts";
 import Overview from "./overview";
 import Doctors from "./doctors";
 import Patients from "./patients";

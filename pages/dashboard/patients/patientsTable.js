@@ -3,14 +3,13 @@
 import React from 'react'
 // import AddPatient from './addPatient'
 import DataTable from 'react-data-table-component'
-import {patientColumns} from './patientColumns'
+import {patientColumns} from '../../../components/patientColumns'
 
 
-export const PatientsTable = (props) => {
 
+export default function PatientsTable(props) {
   return (
-    <>
-    
+    <div>
     <div className='shadow-lg border rounded-xl mt-10'>
         <DataTable 
         className='w-full max-w-fit' 
@@ -25,7 +24,6 @@ export const PatientsTable = (props) => {
         >
         </DataTable>
     </div>
-
-    </>
+    </div>
   )
 }

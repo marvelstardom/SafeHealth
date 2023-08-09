@@ -1,5 +1,5 @@
 import React from "react";
-import Layout from "../components/layouts";
+import Layout from "../../../components/layouts";
 import Image from "next/image";
 import patient from "../../../public/images/patient (1).png"
 import doctor from "../../../public/images/hospital.png"
@@ -165,7 +165,14 @@ export default function Overview() {
                 <Chart />
             </div>
             {/* CALENDAR */}
-            <AppCalendar />    
+            <div className="w-1/2 h-80 rounded-3xl shadow-md p-4 bg-white border-3 flex flex-row gap-4">
+
+            <AppCalendar />   
+            <div className="flex flex-col gap-2 font-bold text-xl text-teal-900 justify-center">
+                <div>Pending</div> 
+                <div>Completed</div> 
+            </div>
+            </div>
         </div>
     </div>
     )

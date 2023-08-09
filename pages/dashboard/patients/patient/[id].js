@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import Layout from "../../components/layouts";
+import Layout from "../../../../components/layouts";
 import Link from "next/link";
 import axios from "axios";
 import { patientData } from "../patientData";
@@ -13,7 +13,7 @@ export default function Patient() {
       axios.get(patientRecords)
         .then(res => setPatientRecords(res.data))
         .catch(err => console.log(err))
-    }, [])
+    }, [patientRecords])
 
     // const { newPatient, setNewPatient} = useState({})
     return Layout (
@@ -72,7 +72,7 @@ export default function Patient() {
                         <form class="flex items-end justify-end space-x-6">
                             <label class="block">
                                 {/* <span class="sr-only">Choose profile photo</span> */}
-                                <h1 className="font-bold text-amber-800">Upload Patient's Record</h1>
+                                <h1 className="font-bold text-amber-800">Upload Patient&apos;s Record</h1>
                                 <input type="file" class="block w-full text-sm text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-amber-100 file:text-amber-700 hover:file:bg-amber-600 hover:file:text-white"/>
                             </label>
                         </form>

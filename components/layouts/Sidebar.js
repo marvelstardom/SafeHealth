@@ -1,7 +1,7 @@
 'use client'
 import React from "react";
 import Link from "next/link";
-import { links } from "@/links";
+import { links } from "@components/links/links";
 
 
 export default function SideBar () {
@@ -31,7 +31,6 @@ export default function SideBar () {
                         </Link>
                     ))}
                 </div>
-                {/* </>)} */}
             </div>
         </nav>
     )

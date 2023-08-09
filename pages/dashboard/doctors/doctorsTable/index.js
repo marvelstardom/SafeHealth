@@ -6,9 +6,9 @@
 "use client"
 import React from 'react'
 import { useState } from 'react'
-import {docData} from '../columns/docData'
-import { COLUMNS } from '../columns/columns'
-import {docColumns} from '../columns/docColumns' 
+import {docData} from '../../../../components/docData'
+import { COLUMNS } from '../../../../components/columns'
+import {docColumns} from '../../../../components/docColumns' 
 import Link from 'next/link'
 import Image from 'next/image'
 import { useMemo} from "react"
@@ -23,7 +23,7 @@ import AddDoctor from './addDoctor'
 import viewMore from '../../../../public/images/left-arrow.png'
 
 
-export const DoctorsTable = (props) => {
+export default function DoctorsTable(props) {
     const [doctorRecords, setDoctorRecords] = useState(docData)
     const [view, setView] = React.useState('module');
     const [isOpen, setIsOpen] = useState(false)

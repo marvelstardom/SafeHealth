@@ -1,6 +1,6 @@
 // "use client"
-import 'tailwindcss/tailwind.css'
 import './globals.css'
+import 'tailwindcss/tailwind.css'
 import { useRouter } from 'next/router'
 import { SessionProvider } from "next-auth/react"
 

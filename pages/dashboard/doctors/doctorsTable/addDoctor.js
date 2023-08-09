@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import ReactModal from "react-modal"
-import { docData } from '../columns/docData'
+import { docData } from '../../../../components/docData'
 
 export default function AddDoctor() {
     const [isOpenModal, setisOpenModal] = useState(false)

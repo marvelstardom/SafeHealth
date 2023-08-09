@@ -75,7 +75,7 @@ export const data = {
 
 export default function Chart() {
   return (
-    <div className=''>
+    <div className='h-1/3'>
       <Bar options={options} data={data} />
     </div>
   )

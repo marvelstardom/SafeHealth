@@ -1,8 +1,8 @@
 "use client"
 import React from "react";
 import { useState, useEffect } from "react";
-import Layout from "../components/layouts";
-import { DoctorsTable } from "./doctorsTable";
+import Layout from "../../../components/layouts";
+import DoctorsTable from "./doctorsTable";
 
 export default function Doctors(){
     const [isClient, setIsClient] = useState(false)
