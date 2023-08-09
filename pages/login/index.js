@@ -11,7 +11,7 @@ import GitHub from "../../public/images/github.svg"
 const Login = () => {
   // User Sign In Function
   const handleSubmit = async () =>{
-    const status = await signIn('google', {callbackUrl: 'http://localhost:3000'})
+    const status = await signIn('credentials', {email, password, callbackUrl: 'http://localhost:3000'})
     console.log(status)
   }
   // Google Sign In Function

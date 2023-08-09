@@ -4,7 +4,7 @@ import GithubProvider from "next-auth/providers/github"
 import AppleProvider from 'next-auth/providers/apple'
 import FacebookProvider from 'next-auth/providers/facebook'
 import GoogleProvider from 'next-auth/providers/google'
-// import CredentialsProvider from 'next-auth/providers/credentials'
+import CredentialsProvider from 'next-auth/providers/credentials'
 // import EmailProvider from 'next-auth/providers/email'
 // import { MongoDBAdapter } from "@auth/mongodb-adapter"
 // import clientPromise from "./clientPromise"
@@ -12,7 +12,7 @@ import GoogleProvider from 'next-auth/providers/google'
 // import User from "../../../backend/models/User"
 // import { compare } from "bcryptjs"
 
-export const authHandler =  NextAuth({
+export default NextAuth({
   providers: [
     // OAuth authentication providers...
     AppleProvider({
@@ -38,6 +38,20 @@ export const authHandler =  NextAuth({
       clientId: process.env.GITHUB_ID,
       clientSecret: process.env.GITHUB_SECRET,
     }),
+    CredentialsProvider({
+    name: "Credentials",
+    async authorize(credentials, req) {
+      // Add logic here to look up the user from the credentials supplied
+      const user = { email: credentials.email, password: credentials.password }
+
+      if (user) {
+        // Any object returned will be saved in `user` property of the JWT
+        return user
+      } else {
+        return null
+      }
+    }
+  })
     // CredentialsProvider({
     //   name: "Credentials",
     //   async authorize(credentials, req) {
