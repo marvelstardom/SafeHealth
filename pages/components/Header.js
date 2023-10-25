@@ -20,7 +20,7 @@ export default function Header() {
                     <Logo />
                     <div className='flex flex-row items-center justify-end gap-2'>
                       <Link href='../login'>
-                        <button className='hover:bg-teal-800 bg-teal-900 rounded-full text-white px-6 py-2'>Sign Up</button>
+                        <button className='hover:bg-teal-800 bg-teal-900 rounded-full text-white px-6 py-2'>Sign In</button>
                       </Link>
                       <Link href='../register'>
                         <button className='hover:bg-teal-800 bg-teal-900 rounded-full text-white px-6 py-2'>Register</button>

@@ -14,6 +14,104 @@ import AppCalendar from "../components/Calendar";
 export default function Overview() {
     return Layout (
     <div className='mt-14 ml-10 h-screen w-full max-w-7xl m-0 pl-10'>
+
+        {/* OVERVIEW TABS */}
+      <div className="mb-6 grid grid-cols-1 gap-6 text-white sm:grid-cols-2 xl:grid-cols-4">
+        {/* SESSION */}
+        {/* <div className="panel bg-gradient-to-r from-fuchsia-500 to-fuchsia-400">
+          <div className="flex justify-between">
+            <div className="text-md font-semibold ltr:mr-1 rtl:ml-1">Session</div>
+            
+          </div>
+          <div className="mt-5 flex items-center">
+            <div className="text-3xl font-bold ltr:mr-3 rtl:ml-3"> 2023 </div>
+            <div className="badge bg-white/30">+ 0.35% </div>
+          </div>
+          <div className="mt-5 flex items-center font-semibold">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="ltr:mr-2 rtl:ml-2">
+              <path
+                opacity="0.5"
+                d="M3.27489 15.2957C2.42496 14.1915 2 13.6394 2 12C2 10.3606 2.42496 9.80853 3.27489 8.70433C4.97196 6.49956 7.81811 4 12 4C16.1819 4 19.028 6.49956 20.7251 8.70433C21.575 9.80853 22 10.3606 22 12C22 13.6394 21.575 14.1915 20.7251 15.2957C19.028 17.5004 16.1819 20 12 20C7.81811 20 4.97196 17.5004 3.27489 15.2957Z"
+                stroke="currentColor"
+                strokeWidth="1.5"
+              />
+              <path d="M15 12C15 13.6569 13.6569 15 12 15C10.3431 15 9 13.6569 9 12C9 10.3431 10.3431 9 12 9C13.6569 9 15 10.3431 15 12Z" stroke="currentColor" strokeWidth="1.5" />
+            </svg>
+                          Second Term
+          </div>
+        </div> */}
+        {/* TOTAL STAFFS */}
+        {/* <div className="panel bg-gradient-to-r from-cyan-500 to-cyan-400">
+          <div className="flex justify-between">
+            <div className="text-md font-semibold ltr:mr-1 rtl:ml-1">Total Staffs</div>
+            
+          </div>
+          <div className="mt-5 flex items-center">
+            <div className="text-3xl font-bold ltr:mr-3 rtl:ml-3"> 170 </div>
+            <div className="badge bg-white/30">+ 2.35% </div>
+          </div>
+          <div className="mt-5 flex items-center font-semibold">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="ltr:mr-2 rtl:ml-2">
+              <path
+                opacity="0.5"
+                d="M3.27489 15.2957C2.42496 14.1915 2 13.6394 2 12C2 10.3606 2.42496 9.80853 3.27489 8.70433C4.97196 6.49956 7.81811 4 12 4C16.1819 4 19.028 6.49956 20.7251 8.70433C21.575 9.80853 22 10.3606 22 12C22 13.6394 21.575 14.1915 20.7251 15.2957C19.028 17.5004 16.1819 20 12 20C7.81811 20 4.97196 17.5004 3.27489 15.2957Z"
+                stroke="currentColor"
+                strokeWidth="1.5"
+              />
+              <path d="M15 12C15 13.6569 13.6569 15 12 15C10.3431 15 9 13.6569 9 12C9 10.3431 10.3431 9 12 9C13.6569 9 15 10.3431 15 12Z" stroke="currentColor" strokeWidth="1.5" />
+            </svg>
+                          Last Term 135
+          </div>
+        </div> */}
+        {/* TOTAL STUDENTS */}
+        {/* <div className="panel bg-gradient-to-r from-violet-500 to-violet-400">
+          <div className="flex justify-between">
+            <div className="text-md font-semibold ltr:mr-1 rtl:ml-1">Total Students</div>
+            
+          </div>
+          <div className="mt-5 flex items-center">
+            <div className="text-3xl font-bold ltr:mr-3 rtl:ml-3"> 5,137 </div>
+            <div className="badge bg-white/30">+ 2.35% </div>
+          </div>
+          <div className="mt-5 flex items-center font-semibold">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="ltr:mr-2 rtl:ml-2">
+              <path
+                opacity="0.5"
+                d="M3.27489 15.2957C2.42496 14.1915 2 13.6394 2 12C2 10.3606 2.42496 9.80853 3.27489 8.70433C4.97196 6.49956 7.81811 4 12 4C16.1819 4 19.028 6.49956 20.7251 8.70433C21.575 9.80853 22 10.3606 22 12C22 13.6394 21.575 14.1915 20.7251 15.2957C19.028 17.5004 16.1819 20 12 20C7.81811 20 4.97196 17.5004 3.27489 15.2957Z"
+                stroke="currentColor"
+                strokeWidth="1.5"
+              />
+              <path d="M15 12C15 13.6569 13.6569 15 12 15C10.3431 15 9 13.6569 9 12C9 10.3431 10.3431 9 12 9C13.6569 9 15 10.3431 15 12Z" stroke="currentColor" strokeWidth="1.5" />
+            </svg>
+                          Last Term 4,709
+          </div>
+        </div> */}
+        {/*  ADMISSION */}
+        {/* <div className="panel bg-gradient-to-r from-blue-500 to-blue-400">
+          <div className="flex justify-between">
+            <div className="text-md font-semibold ltr:mr-1 rtl:ml-1">Admissions</div>
+           
+          </div>
+          <div className="mt-5 flex items-center">
+            <div className="text-3xl font-bold ltr:mr-3 rtl:ml-3"> 1,085 </div>
+            <div className="badge bg-white/30">+ 1.35% </div>
+          </div>
+          <div className="mt-5 flex items-center font-semibold">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="ltr:mr-2 rtl:ml-2">
+              <path
+                opacity="0.5"
+                d="M3.27489 15.2957C2.42496 14.1915 2 13.6394 2 12C2 10.3606 2.42496 9.80853 3.27489 8.70433C4.97196 6.49956 7.81811 4 12 4C16.1819 4 19.028 6.49956 20.7251 8.70433C21.575 9.80853 22 10.3606 22 12C22 13.6394 21.575 14.1915 20.7251 15.2957C19.028 17.5004 16.1819 20 12 20C7.81811 20 4.97196 17.5004 3.27489 15.2957Z"
+                stroke="currentColor"
+                strokeWidth="1.5"
+              />
+              <path d="M15 12C15 13.6569 13.6569 15 12 15C10.3431 15 9 13.6569 9 12C9 10.3431 10.3431 9 12 9C13.6569 9 15 10.3431 15 12Z" stroke="currentColor" strokeWidth="1.5" />
+            </svg>
+                          Last Session 894
+          </div>
+        </div> */}
+      </div>
+      {/* END OF OVERVIEW TABS */}
+
         <div className='flex flex-row gap-2 mb-6'>
             {/* TOTAL PATIENTS */}
             <div className="flex flex-col border-4 border-teal-900 rounded-3xl py-4 px-6 shadow-md w-1/4">

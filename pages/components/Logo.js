@@ -9,8 +9,8 @@ export default function Logo () {
             <Image 
             src={healthcare}
             alt="SafeHealth"
-            width={60}
-            height={60}
+            width={50}
+            height={50}
             className="mr-0"
             />
         {/* <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-14 h-14 mr-2 fill-teal-900">
